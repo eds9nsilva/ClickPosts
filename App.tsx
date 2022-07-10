@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from 'styled-components';
+import { ContextProvider } from './src/context/context';
 import theme from './src/global/theme';
 import { Routes } from './src/routes';
 import {
@@ -21,10 +22,12 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <StatusBar backgroundColor="transparent" translucent animated />
-        <ThemeProvider theme={theme}>
+      <StatusBar backgroundColor="transparent" translucent style='light' />
+      <ThemeProvider theme={theme}>
+        <ContextProvider>
           <Routes />
-        </ThemeProvider>
+        </ContextProvider>
+      </ThemeProvider>
     </NavigationContainer>
   );
 }

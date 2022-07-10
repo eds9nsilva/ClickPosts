@@ -1,5 +1,6 @@
-import React, {useContext} from "react";
+import React from "react";
 import { IUser } from "../../model/User";
+import { useNavigation } from '@react-navigation/native';
 import {
   UserContainer,
   Container,
@@ -12,14 +13,18 @@ import {
   Username
 } from "./styles";
 import UserIcons from '../../assets/userIcon.png';
-import {Context} from '../../context/context';
+
+interface ScreenNavigationProp {
+  navigate: (screem: string, user: unknown) => void;
+}
 
 interface IParams {
   user: IUser;
 }
 
 export const ListUsers: React.FunctionComponent<IParams> = ({user}: IParams) => {
-  const {removePost} = useContext(Context);
+  const navigation = useNavigation<ScreenNavigationProp>();
+
   return (
     <Container>
       <Content>
@@ -31,7 +36,9 @@ export const ListUsers: React.FunctionComponent<IParams> = ({user}: IParams) => 
           <Username>Username: @{user.username}</Username>
           <Username>Website: {user.website}</Username>
         </UserContainer>
-        <SelectContainer>
+        <SelectContainer  activeOpacity={.7}  onPress={()=>
+          navigation.navigate('Post', {user})
+        }>
           <Icon name="arrow-right"/>
         </SelectContainer>
       </Content>

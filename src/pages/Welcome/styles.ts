@@ -17,8 +17,8 @@ export const Title = styled.Text`
 
 export const Image = styled.Image`
   margin-top: 10%;
-  width: 66%;
-  height: 35%;
+  width: 300px;
+  height: 300px;
 `;
 
 export const Button = styled.TouchableOpacity`
