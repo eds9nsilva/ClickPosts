@@ -8,7 +8,6 @@ import {
   AuthorTitle,
   Container,
   Content,
-  Header,
   InputTitle,
   ButtonText,
   InputText,
@@ -55,13 +54,13 @@ export const Edit: FunctionComponent = () => {
       editPost(DATA);
       navigate('Home');
     } else {
-      alert('Há campos vazios!');
+      alert('There is empty field');
     }
   };
   return (
     <Container>
       <Content>
-        <AuthorTitle>Autor selecionado: {user.name}</AuthorTitle>
+        <AuthorTitle>{user.name}</AuthorTitle>
         <ContainerInputTitle>
           <InputTitle
             value={title}
@@ -85,7 +84,7 @@ export const Edit: FunctionComponent = () => {
           />
         </ContainerInputText>
         <ButtonCreate onPress={handleEdit}>
-          <ButtonText>Editar postagem</ButtonText>
+          <ButtonText>Edit post</ButtonText>
         </ButtonCreate>
       </Content>
     </Container>
