@@ -1,18 +1,26 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { MaterialIcons } from "@expo/vector-icons";
-
+import User from '../../assets/userIcon.png';
 import { IUser } from "../../model/User";
 import { IPost } from "../../model/posts";
 import {
   HeaderPost,
   TitlePost,
-  TouchPost,
-  ContainerPost,
+  Post,
+  Container,
   TextName,
   Avatar,
   ButtonPost,
+  Username,
+  ContentText,
+  TextPost,
+  ContentIcon,
+  ContentHeader,
+  IconsDelete,
+  IconsEdit,
 } from "./styles";
+import { Alert } from "react-native";
+import { Context } from "../../context/context";
 
 interface ScreenNavigationProp {
   navigate: (screen: string, params?: unknown) => void;
@@ -25,32 +33,56 @@ interface Props {
 
 export const PostList: React.FC<Props> = (props) => {
   const { navigate } = useNavigation<ScreenNavigationProp>();
+  const { removePost } = React.useContext(Context);
 
   const handleUserDetails = (user: IUser) => {
     navigate("UserDetails", { user });
   };
 
-  const handleUserPost = (post: IPost, user: IUser) => {
-    navigate("ViewPost", { post, user });
+  const handleEditPost = (post: IPost, user: IUser) => {
+    navigate("Edit", { post, user });
   };
 
+  const handleRemove = () => {
+    Alert.alert('Warning!', 'Do you really want to delete this post?', [
+      {
+        text: 'Cancel',
+      },
+      {
+        text: 'Delete',
+        onPress: () => removePost(props.post),
+      },
+    ]);
+  };
+
+
   return (
-    <ContainerPost style={{ marginBottom: 20 }}>
-      <HeaderPost
+    <Container>
+      <HeaderPost>
+      <ContentHeader
         onPress={() => {
           handleUserDetails(props.user);
         }}
       >
-      <TextName>{props.user.name}</TextName>
+      <Avatar source={User} />
+        <ContentText>
+          <TextName>{props.user.name}</TextName>
+          <Username>@{props.user.username}</Username>
+        </ContentText>
+      </ContentHeader>
+      <ContentIcon>
+        <IconsDelete name="trash-2" size={28}
+          onPress={handleRemove}
+        />
+        <IconsEdit name="edit" size={28}
+          onPress={() => handleEditPost(props.post, props.user)}
+        />
+      </ContentIcon>
       </HeaderPost>
-
-      <TouchPost onPress={() => handleUserPost(props.post, props.user)}>
+      <Post>
         <TitlePost>{props.post.title}</TitlePost>
-      </TouchPost>
-
-      <ButtonPost onPress={() => handleUserPost(props.post, props.user)}>
-
-      </ButtonPost>
-    </ContainerPost>
+        <TextPost>{props.post.body}</TextPost>
+      </Post>
+    </Container>
   );
 };

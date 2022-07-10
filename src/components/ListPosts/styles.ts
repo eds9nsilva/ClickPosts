@@ -1,17 +1,24 @@
 import styled from "styled-components/native";
+import { RFValue } from "react-native-responsive-fontsize";
+import { Feather } from '@expo/vector-icons';
 
-export const ContainerPost = styled.View`
-  margin: 8px 8px 2%;
-  background-color: #FFF;
+export const Container = styled.View`
+  margin: 8px 8px 8px;
+  background-color: ${({theme}) => theme.colors.blue};
   border-radius: 8px;
-  box-shadow: 1px 1px 3px rgba(18, 18, 18, 1);
+  box-shadow: 1px 1px 3px ${({theme}) => theme.colors.danger};
   padding: 11px;
+  height: 250px;
+`;
 
+export const ContentHeader = styled.TouchableOpacity`
+  flex-direction: row;
 `;
 
 export const HeaderPost = styled.TouchableOpacity`
   width: 100%;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
 `;
@@ -20,32 +27,63 @@ export const Avatar = styled.Image`
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  border-color: rgba(51, 176, 246, 1);
+  border-color: ${({theme}) => theme.colors.primary};
   border-width: 2px;
 `;
 
+export const ContentText = styled.View`
+  flex-direction: column;
+`;
 
 export const TextName = styled.Text`
-  color: rgba(0, 0, 0, 1);
-  font-size: 17px;
+  color: ${({theme}) => theme.colors.white};
+  font-size: ${RFValue(20)}px;
   font-weight: bold;
-  margin-left: 7px;
+  margin-left: 2%;
+`;
+
+export const Username = styled.Text`
+  color: ${({theme}) => theme.colors.white};
+  font-size: ${RFValue(16)}px;
+  font-weight: bold;
+  margin-left: 2%;
 `;
 
 export const TitlePost = styled.Text`
-  color: #9E9E9E;
-  font-size: 20px;
-
-  margin-right: 18px;
+  color: ${({theme}) => theme.colors.white};
+  font-size: ${RFValue(18)}px;
+  margin-left: 2%;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 2%;
+  font-weight: bold;
 `;
 
-export const TouchPost = styled.TouchableOpacity`
+export const TextPost = styled.Text`
+  color: ${({theme}) => theme.colors.white};
+  font-size: ${RFValue(16)}px;
+  margin-left: 2%;
+  justify-content: center;
+  margin-bottom: 2%;
+  text-align: left;
 `;
+
+export const Post = styled.View``;
 
 export const ButtonPost = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+`;
+
+export const ContentIcon = styled.View`
+  flex-direction: row;
+`;
+
+export const IconsDelete = styled(Feather)`
+  color: ${({theme}) => theme.colors.white};
+`;
+
+export const IconsEdit = styled(Feather)`
+  color: ${({theme}) => theme.colors.white};
+  margin-left: 18px;
 `;
