@@ -59,17 +59,22 @@ export const PostList: React.FC<Props> = (props) => {
   return (
     <Container>
       <HeaderPost>
-      <ContentHeader
-        onPress={() => {
-          handleUserDetails(props.user);
-        }}
-      >
-      <Avatar source={User} />
-        <ContentText>
-          <TextName>{props.user.name}</TextName>
-          <Username>@{props.user.username}</Username>
-        </ContentText>
-      </ContentHeader>
+        <ContentHeader
+          onPress={() => {
+            handleUserDetails(props.user);
+          }}
+        >
+        <Avatar source={User} />
+          <ContentText>
+            <TextName>{props.user.name}</TextName>
+            <Username>@{props.user.username}</Username>
+          </ContentText>
+        </ContentHeader>
+      </HeaderPost>
+      <Post>
+        <TitlePost>{props.post.title}</TitlePost>
+        <TextPost>{props.post.body}</TextPost>
+      </Post>
       <ContentIcon>
         <IconsDelete name="trash-2" size={28}
           onPress={handleRemove}
@@ -78,11 +83,6 @@ export const PostList: React.FC<Props> = (props) => {
           onPress={() => handleEditPost(props.post, props.user)}
         />
       </ContentIcon>
-      </HeaderPost>
-      <Post>
-        <TitlePost>{props.post.title}</TitlePost>
-        <TextPost>{props.post.body}</TextPost>
-      </Post>
     </Container>
   );
 };

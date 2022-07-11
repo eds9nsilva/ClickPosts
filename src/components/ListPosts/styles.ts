@@ -76,8 +76,8 @@ export const ButtonPost = styled.TouchableOpacity`
 
 export const ContentIcon = styled.View`
   flex-direction: row;
-  margin-left: 2%;
-  margin-right: 2%;
+  justify-content: flex-end;
+  margin: 2%;
 `;
 
 export const IconsDelete = styled(Feather)`
