@@ -3,7 +3,7 @@ import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.blue};
 `;
 
 export const Header = styled.View`
@@ -29,9 +29,9 @@ export const Brand = styled.Image`
 
 export const ButtonNewPost = styled.TouchableOpacity`
   position: absolute;
-  height: 80px;
+  height: 50px;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.blue};
+  background-color: ${({ theme }) => theme.colors.primary};
   justify-content: center;
   align-items: center;
   z-index: 99;
@@ -41,7 +41,7 @@ export const ButtonNewPost = styled.TouchableOpacity`
 
 export const TitleNewPost = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.blue};
   font-size: ${RFValue(22)}px;
   text-align: center;
 `;

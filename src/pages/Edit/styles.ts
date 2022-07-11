@@ -45,8 +45,6 @@ export const InputText = styled.TextInput`
 `;
 
 export const ButtonCreate = styled.TouchableOpacity`
-  width: 110px;
-  height: 60px;
   justify-content: center;
   align-items: center;
   background-color: transparent;
@@ -57,6 +55,7 @@ export const ButtonCreate = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
   font-size: ${RFValue(22)}px;
   color: ${({ theme }) => theme.colors.primary};
+  margin: 4%;
 `;
 
 export const ContainerInputTitle = styled.View`

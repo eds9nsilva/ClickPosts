@@ -4,9 +4,8 @@ import { Feather } from '@expo/vector-icons';
 
 export const Container = styled.View`
   margin: 8px 8px 8px;
-  background-color: ${({theme}) => theme.colors.blue};
+  background-color: ${({theme}) => theme.colors.white};
   border-radius: 8px;
-  box-shadow: 1px 1px 3px ${({theme}) => theme.colors.danger};
   padding: 11px;
 `;
 
@@ -35,21 +34,21 @@ export const ContentText = styled.View`
 `;
 
 export const TextName = styled.Text`
-  color: ${({theme}) => theme.colors.white};
+  color: ${({theme}) => theme.colors.blue};
   font-size: ${RFValue(18)}px;
   font-weight: bold;
   margin-left: 2%;
 `;
 
 export const Username = styled.Text`
-  color: ${({theme}) => theme.colors.white};
+  color: ${({theme}) => theme.colors.blue};
   font-size: ${RFValue(14)}px;
   font-weight: bold;
   margin-left: 2%;
 `;
 
 export const TitlePost = styled.Text`
-  color: ${({theme}) => theme.colors.white};
+  color: ${({theme}) => theme.colors.blue};
   font-size: ${RFValue(18)}px;
   margin-left: 2%;
   justify-content: center;
@@ -58,7 +57,7 @@ export const TitlePost = styled.Text`
 `;
 
 export const TextPost = styled.Text`
-  color: ${({theme}) => theme.colors.white};
+  color: ${({theme}) => theme.colors.blue};
   font-size: ${RFValue(16)}px;
   margin-left: 2%;
   justify-content: center;
@@ -81,10 +80,10 @@ export const ContentIcon = styled.View`
 `;
 
 export const IconsDelete = styled(Feather)`
-  color: ${({theme}) => theme.colors.white};
+  color: ${({theme}) => theme.colors.blue};
 `;
 
 export const IconsEdit = styled(Feather)`
-  color: ${({theme}) => theme.colors.white};
+  color: ${({theme}) => theme.colors.blue};
   margin-left: 18px;
 `;
