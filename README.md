@@ -1,6 +1,6 @@
 # ClickPosts
 ClickPosts é um aplicativo desenvolvido em React Native que simula as funcionalidades de uma rede social. <br>
-
+Utilizando a Api [JSONPLaceholde](https://jsonplaceholder.typicode.com) 
 <p align="center">
 <img src="https://img.shields.io/badge/STATUS-CONCLUÍDO-green?style=for-the-badge"/>
 </p>
@@ -11,6 +11,10 @@ ClickPosts é um aplicativo desenvolvido em React Native que simula as funcional
   <img width = "250" height= "500" src = "src/assets/Screenshot/Screenshot_2.png">
   <img width = "250" height= "500" src = "src/assets/Screenshot/Screenshot_3.png">
 </p>
+<p align="center">
+  <img width = "250" height= "500" src = "src/assets/Screenshot/Screenshot_4.png">
+  <img width = "250" height= "500" src = "src/assets/Screenshot/Screenshot_5.png">
+</p>
 
 
 ## 💻:iphone:Techs 
@@ -20,6 +24,7 @@ ClickPosts é um aplicativo desenvolvido em React Native que simula as funcional
 - `Async-storage`
 - `Context APi`
 - `Styled-components`
+- `Axios`
 ---
 
 ### Clonar o repositório e instalar as dependências
