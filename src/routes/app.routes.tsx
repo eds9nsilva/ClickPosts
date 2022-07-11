@@ -4,8 +4,8 @@ import {Welcome} from '../pages/Welcome';
 import {Home} from '../pages/Home';
 import {Users} from '../pages/Users';
 import {Post} from '../pages/Post';
-import {ViewPost} from '../pages/ViewPost';
 import { Edit } from '../pages/Edit';
+import { UserDetails } from '../pages/UserDetails';
 
 const App = createNativeStackNavigator();
 
@@ -22,7 +22,7 @@ export const AppRoutes: React.FunctionComponent = () => {
         name="Users"
         component={Users}
         options={{
-          title: 'Selecionar o autor do post',
+          title: 'Select the author of the post',
           headerTintColor: '#fff',
           headerStyle: {
             backgroundColor: '#090F24',
@@ -34,32 +34,32 @@ export const AppRoutes: React.FunctionComponent = () => {
         name="Post"
         component={Post}
         options={{
-          title: 'Novo post',
+          title: 'New post',
           headerTintColor: '#fff',
           headerStyle: {
-            backgroundColor: '#000',
+            backgroundColor: '#090F24',
           },
         }}
       />
       <App.Screen
-        name="ViewPost"
-        component={ViewPost}
+        name="Edit"
+        component={Edit}
         options={{
-          title: 'Postagem de usuário',
+          title: 'User post',
           headerTintColor: '#fff',
           headerStyle: {
-            backgroundColor: '#000',
+            backgroundColor: '#090F24',
           },
         }}
       />
        <App.Screen
-        name="Edit"
-        component={Edit}
+        name="UserDetails"
+        component={UserDetails}
         options={{
-          title: 'Postagem de usuário',
+          title: 'User details',
           headerTintColor: '#fff',
           headerStyle: {
-            backgroundColor: '#000',
+            backgroundColor: '#090F24',
           },
         }}
       />
