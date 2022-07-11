@@ -8,7 +8,6 @@ export const Container = styled.View`
   border-radius: 8px;
   box-shadow: 1px 1px 3px ${({theme}) => theme.colors.danger};
   padding: 11px;
-  height: 250px;
 `;
 
 export const ContentHeader = styled.TouchableOpacity`
@@ -37,14 +36,14 @@ export const ContentText = styled.View`
 
 export const TextName = styled.Text`
   color: ${({theme}) => theme.colors.white};
-  font-size: ${RFValue(20)}px;
+  font-size: ${RFValue(18)}px;
   font-weight: bold;
   margin-left: 2%;
 `;
 
 export const Username = styled.Text`
   color: ${({theme}) => theme.colors.white};
-  font-size: ${RFValue(16)}px;
+  font-size: ${RFValue(14)}px;
   font-weight: bold;
   margin-left: 2%;
 `;
@@ -77,6 +76,8 @@ export const ButtonPost = styled.TouchableOpacity`
 
 export const ContentIcon = styled.View`
   flex-direction: row;
+  margin-left: 2%;
+  margin-right: 2%;
 `;
 
 export const IconsDelete = styled(Feather)`

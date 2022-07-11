@@ -4,6 +4,7 @@ import {RFValue} from 'react-native-responsive-fontsize';
 export const Container = styled.View`
   flex: 1;
   background-color: ${({theme}) => theme.colors.blue};
+  align-items: center;
 `;
 
 export const Content = styled.View`
@@ -44,7 +45,7 @@ export const InputText = styled.TextInput`
 `;
 
 export const ButtonCreate = styled.TouchableOpacity`
-  width: 50%;
+  width: 110px;
   height: 60px;
   justify-content: center;
   align-items: center;

@@ -28,7 +28,7 @@ export const UserContainer = styled.View`
 export const SelectContainer = styled.TouchableOpacity`
   height: 110px;
   width: 20%;
-  background-color: ${({theme}) => theme.colors.danger};
+  background-color: ${({theme}) => theme.colors.primary};
   text-align: center;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -50,7 +50,7 @@ export const ContentImage = styled.View`
   justify-content: center;
   height: 110px;
   width: 20%;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.blue};
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 `;
@@ -58,6 +58,9 @@ export const ContentImage = styled.View`
 export const ImageUser = styled.Image`
   width: 50px;
   height: 50px;
+  border-radius: 30px;
+  border-color: ${({theme}) => theme.colors.primary};
+  border-width: 2px;
 `;
 
 export const NameUser = styled.Text`
@@ -74,5 +77,5 @@ export const Username = styled.Text`
 
 export const Icon = styled(Feather)`
   font-size: ${RFValue(32)}px;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.blue};
 `;

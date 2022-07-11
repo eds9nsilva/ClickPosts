@@ -34,10 +34,9 @@ export const Post: FunctionComponent = () => {
   const { navigate } = useNavigation<ScreenNavigationProp>();
   const { posts, addPost } = React.useContext(Context);
 
-  // Pegar ID do usuario, criar new post e mandar pro addNewPost
   const handleCreatePost = () => {
     if (text === '' || title === '') {
-      alert('Preencha todos os campos');
+      alert('Fill in all fields');
       return;
     }
 
@@ -57,10 +56,10 @@ export const Post: FunctionComponent = () => {
   return (
     <Container>
       <Content>
-        <AuthorTitle>Autor selecionado: {user.name}</AuthorTitle>
+        <AuthorTitle>{user.name}</AuthorTitle>
         <ContainerInputTitle>
           <InputTitle
-            placeholder="Digite o título"
+            placeholder="Type the title"
             value={title}
             onChangeText={text => setTitle(text)}
             autoCorrect={true}
@@ -71,7 +70,7 @@ export const Post: FunctionComponent = () => {
         </ContainerInputTitle>
         <ContainerInputText>
           <InputText
-            placeholder="Digite a publicação"
+            placeholder="Type the post"
             value={text}
             onChangeText={text => setText(text)}
             autoCorrect={true}
@@ -81,7 +80,7 @@ export const Post: FunctionComponent = () => {
           />
         </ContainerInputText>
         <ButtonCreate onPress = {handleCreatePost}>
-          <ButtonText>Criar Postagem</ButtonText>
+          <ButtonText>Create new post</ButtonText>
         </ButtonCreate>
       </Content>
     </Container>
