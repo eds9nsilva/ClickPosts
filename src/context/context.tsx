@@ -73,39 +73,57 @@ export const ContextProvider: FunctionComponent<IProps> = ({children}) => {
   }, []);
 
   const addPost = async (post: IPost) => {
-    try {
-      const newListPost = [...posts, post];
-      setPosts(newListPost);
-      await AsyncStorage.setItem(postData, JSON.stringify(newListPost));
-      Alert.alert("Sucesso", "Postagem realizada!");
-    } catch (error) {
-      throw new Error(error as string);
-    }
+    await api.post('posts', post).then(async (response) => {
+      if(response.status === 201) {
+        try {
+          const newListPost = [...posts, post];
+          setPosts(newListPost);
+          await AsyncStorage.setItem(postData, JSON.stringify(newListPost));
+          Alert.alert("Success", "Post made");
+        } catch (error) {
+          throw new Error(error as string);
+        }
+      } else {
+        Alert.alert("Error", `Status error: ${response.status}`);
+      }
+    })
   }
   const editPost = async (post: IPost) => {
-    try {
-      const newListPosts = posts.map(posts => {
-        if(posts.id === post.id) {
-          return post;
+    await api.put(`posts/${post.id}`, post).then(async (response) => {
+      if(response.status === 200) {
+        try {
+          const newListPosts = posts.map(posts => {
+            if(posts.id === post.id) {
+              return post;
+            }
+            return posts;
+          });
+          await AsyncStorage.setItem(postData, JSON.stringify(newListPosts));
+          setPosts(newListPosts);
+          alert("Post changed!");
+        } catch (error) {
+          throw new Error(error as string);
         }
-        return posts;
-      });
-      await AsyncStorage.setItem(postData, JSON.stringify(newListPosts));
-      setPosts(newListPosts);
-      alert("Post alterado!");
-    } catch (error) {
-      throw new Error(error as string);
-    }
+      } else {
+        Alert.alert("Error", `Status error: ${response.status}`);
+      }
+    })
   }
   const removePost = async (post: IPost) => {
-    try {
-      const newListPost = posts.filter((item) => item.id !== post.id);
-      await AsyncStorage.setItem(postData, JSON.stringify(newListPost));
-      Alert.alert('Success', 'Post successfully deleted');
-      setPosts(newListPost);
-    } catch (error) {
-      throw new Error(error as string);
-    }
+    await api.delete(`posts/${post.id}`).then(async (response) => {
+      if(response.status === 200) {
+        try {
+          const newListPost = posts.filter((item) => item.id !== post.id);
+          await AsyncStorage.setItem(postData, JSON.stringify(newListPost));
+          Alert.alert('Success', 'Post successfully deleted');
+          setPosts(newListPost);
+        } catch (error) {
+          throw new Error(error as string);
+        }
+      } else {
+        Alert.alert("Error", `Status error: ${response.status}`);
+      }
+    })
   }
 
   return (
