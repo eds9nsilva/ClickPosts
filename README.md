@@ -11,6 +11,10 @@ ClickPosts é um aplicativo desenvolvido em React Native que simula as funcional
   <img width = "250" height= "500" src = "src/assets/Screenshot/Screenshot_2.png">
   <img width = "250" height= "500" src = "src/assets/Screenshot/Screenshot_3.png">
 </p>
+<p align="center">
+  <img width = "250" height= "500" src = "src/assets/Screenshot/Screenshot_4.png">
+  <img width = "250" height= "500" src = "src/assets/Screenshot/Screenshot_5.png">
+</p>
 
 
 ## 💻:iphone:Techs 
